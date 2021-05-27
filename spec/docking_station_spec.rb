@@ -31,11 +31,11 @@ describe DockingStation do
     expect(subject.dock(bike)).to eq [bike]
   end
 
-  it 'returns docked bikes' do
-    bike = Bike.new
-    subject.dock(bike)
-    expect(subject.bikes).to eq [bike]
-  end
+  #it 'returns docked bikes' do
+    #bike = Bike.new
+    #expect(subject.bikes).to eq [bike]
+    #subject.dock(bike)
+  #end
 
   it 'has a default capacity' do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
@@ -47,7 +47,7 @@ describe DockingStation do
       50.times { docking_station.dock Bike.new }
       expect{ docking_station.dock Bike.new }.to raise_error 'Docking station full'
     end
-    
+
     subject { DockingStation.new }
     let(:bike) { Bike.new }
     it 'defaults capacity' do
